@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/yamadaMk12/tip-calculator-app-main](https://github.com/yamadaMk12/tip-calculator-app-main)
-- Live Site URL: [https://yamadamk12.github.io/tip-calculator-app-main/](https://yamadamk12.github.io/tip-calculator-app-main/)
+- Solution URL: [https://github.com/yamadaMk12/product-list-with-cart-main](https://github.com/yamadaMk12/product-list-with-cart-main)
+- Live Site URL: [https://yamadamk12.github.io/product-list-with-cart-main/](https://yamadamk12.github.io/product-list-with-cart-main/)
 
 ## My process
 
