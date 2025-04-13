@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Product list with cart</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="deserts-section">
+      <div class="head-desert-section">
+        <h1>Desserts</h1>
+      </div>
+      <div class="desert-articles">
+      </div>
+    </section>
+    <section class="cart-section">
+      <div class="head-card-section">
+        <h3>Your Cart (<span id="total-number">0</span>)</h3>
+      </div>
+      <div class="body-card-section">
+        <div class="empty-container">
+          <img src="assets/images/illustration-empty-cart.svg" alt="illustration-empty-cart" id="illustration-empty-cart">
+          <p>Your added items will appear here</p>
+        </div>
+        <div class="total-order">
+          <p>Order total:</p>
+          <h1>$<span id="total">0</span></h1>
+        </div>
+        <div class="carbon-notice">
+          <img src="assets/images/icon-carbon-neutral.svg" alt="icon-carbon-neutral">
+          <p>This is a <span>carbon-neutral</span> delivery</p>
+        </div>
+        <button id="confirm-btn">Confirm Order</button>
+      </div>
+    </section>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Yamada-MK</a>.
+  </div>
+  <div class="custom-alert">
+    <div class="alert-head">
+      <img src="assets/images/icon-order-confirmed.svg" alt="icon-order-confirmed">
+      <h1>Order Confirmed</h1>
+      <p>We hope you enjoy your food!</p>
+    </div>
+    <div class="alert-body">
+      
+      <div class="alert-total">
+        <p>Order total:</p>
+        <h3>$<span id="total">0</span></h3>
+      </div>
+    </div>
+    <button id="newPage">Start New Order</button>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
