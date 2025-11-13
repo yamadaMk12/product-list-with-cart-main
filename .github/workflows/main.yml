@@ -16,6 +16,7 @@ jobs:
       - name: Installer Java (nécessaire à Sonar Scanner)
         uses: actions/setup-java@v4
         with:
+          distribution: 'temurin'
           java-version: '17'
 
       - name: Installer Sonar Scanner
