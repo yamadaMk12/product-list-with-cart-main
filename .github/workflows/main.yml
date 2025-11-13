@@ -13,22 +13,26 @@ jobs:
       - name: Checkout du code
         uses: actions/checkout@v4
 
-      - name: Installer Java (nécessaire à Sonar Scanner)
+      - name: Installer Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'   # required
+          distribution: 'temurin'
           java-version: '17'
 
       - name: Installer Sonar Scanner
         run: |
           sudo apt-get update
           sudo apt-get install -y unzip wget
-          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-          unzip sonar-scanner-cli-*.zip -d /opt
-          echo "/opt/sonar-scanner-*/bin" >> $GITHUB_PATH  # ✅ make it available to all next steps
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip -O sonar.zip
+          unzip sonar.zip -d /opt
+          SCANNER_DIR=$(find /opt -type d -name "sonar-scanner-*")
+          echo "$SCANNER_DIR/bin" >> $GITHUB_PATH
+          echo "SonarQube Scanner installed in: $SCANNER_DIR"
 
-      - name: Vérifier l'installation
-        run: sonar-scanner -v  # ✅ check it works
+      - name: Vérifier sonar-scanner
+        run: |
+          which sonar-scanner
+          sonar-scanner -v
 
       - name: Lancer le script d’analyse
         env:
