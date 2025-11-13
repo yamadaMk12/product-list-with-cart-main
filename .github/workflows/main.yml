@@ -1,0 +1,32 @@
+name: Analyse SonarQube
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sonar-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Installer Java (nécessaire à Sonar Scanner)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+
+      - name: Installer Sonar Scanner
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unzip
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+          unzip sonar-scanner-cli-*.zip -d /opt
+          export PATH=$PATH:/opt/sonar-scanner-*/bin
+
+      - name: Lancer le script d’analyse
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: bash scripts/run_sonar.sh
